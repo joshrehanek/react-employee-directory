@@ -2,36 +2,32 @@ import React from 'react'
 import './style.css'
 import { Table } from 'react-bootstrap';
 
-export default function DataTable({ filteredEmployees }) {
+export default function DataTable({ Employees }) {
     return (
         <div>
             <Table striped bordered hover>
                 <thead>
                     <tr>
-                        <th>#</th>
                         <th>First Name</th>
                         <th>Last Name</th>
-                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Location</th>
                     </tr>
                 </thead>
                 <tbody>
+                {this.Employees.map(function (users) {
+                    return(
                     <tr>
-                        <td>1</td>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
+                    <td>
+                        <img src={users.picture.thumbnail} alt="profile"/>
+                    </td>
+                        <td>{users.name.first}</td>
+                        <td>{users.name.last}</td>
+                        <td>{users.email}</td>
+                        <td>{users.location.state}, {users.location.country}</td>
                     </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td colSpan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
+                    );
+                })}
                 </tbody>
             </Table>
        
