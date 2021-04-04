@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import API from "../../utils/API"
-import Table from "../Table"
+import DataTable from "../DataTable"
 import SearchBox from "../SearchBox"
 
 
@@ -23,7 +23,7 @@ class Container extends Component {
 
     searchEmployees = query => {
         API.search(query)
-        .then(res => this.setState({ employees: res.data }))
+        .then(res => this.setState({ filteredEmployees: res.data }))
         .catch(err => console.log(err));
     }
 
@@ -37,20 +37,21 @@ class Container extends Component {
 
     handleSearchBoxSubmit = event => {
         event.preventDefault();
-        this.searchEmployees(this.state.search)
+        this.searchEmployees(this.state.search);
     };
 
     render() {
         console.log(this.state.employees)
         return (
             <div>
-                <Table 
-                users ={this.state.filteredEmployees} 
-
-                />
-            
-    
-
+            <SearchBox 
+            name="searchEmployee"
+            value={this.handleSearchBoxChange}
+            />
+            <DataTable 
+            users ={this.state.Employees} 
+            value={this.Employees}
+            />
             </div>
         )
     }
