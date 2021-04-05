@@ -21,13 +21,11 @@ This is a employee directory created with React JS. This application's UI is bro
 - ![Demo](./public/assets/demo.gif)
 
 ## Technologies
+- [react](https://reactjs.org/)
 - [node.js](https://nodejs.org/en//)
 - [npm](https://www.npmjs.com/)
-- [mongoose](https://mongoosejs.com/docs/)
 - [express](https://expressjs.com/)
-- [morgan](https://www.npmjs.com/package/morgan)
-- [compression](https://www.npmjs.com/package/compression)
-- [lite-server](https://www.npmjs.com/package/lite-server)
+- [react-bootstrap](https://react-bootstrap.github.io/)
 
 
 ## Summary
